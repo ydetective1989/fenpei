@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/userinfo.css">
+</head>
+<body>
+    <div class="table-condensed">
+            <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>用户名</td>
+                            <td>宽带档次</td>
+                            <td>宽带接入号</td>
+                            <td>发展渠道</td>
+                            <td>返回码</td>
+                        </tr>
+                    </thead>
+                    <tbody>      
+                    </tbody>
+                </table>
+                <nav aria-label="...">
+                        <ul class="pager">
+                          <li><a id="pre" href="javascript:void(0)">上一页</a></li>
+                          <li><a id="next" href="javascript:void(0)">下一页</a></li>
+                        </ul>
+                </nav>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+     let allpages = 0;
+     let pagenum = 0;
+     islogin();
+     $('document').ready(function(){
+         getallpages(5);//每页显示5条 获取页数
+         getuserinfo(0);
+         $('.pager').on('click','#pre',function(e){
+             e.stopPropagation();
+             pagenum --;
+             if(pagenum < 0 ){
+                 pagenum = 0;
+             }
+             getuserinfo(pagenum);
+         }).on('click','#next',function(e){
+             e.stopPropagation();
+             pagenum ++;
+             if(pagenum > allpages){
+                 pagenum = allpages;
+             }
+             getuserinfo(pagenum);
+         })
+     })
+    </script>
+</body>
+</html>

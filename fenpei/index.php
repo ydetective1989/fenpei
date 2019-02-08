@@ -1,14 +1,13 @@
 <?php
 require('./config.php');
-setcookie('user','qiuwei',time()+36000);
-if(isset($_COOKIE['user']) && !empty($_COOKIE['user'])){
+if(isset($_COOKIE['userid']) && !empty($_COOKIE['userid'])){
     if(isset($_POST) && !empty($_POST)){
         $username = $_POST['username'];
         $level = $_POST['level'];
         $number = $_POST['number'];
         $department = $_POST['department'];
         $subdate = time();
-        $submen = $_COOKIE['user'];
+        $submen = $_COOKIE['userid'];
         $query = "SELECT id,hash  FROM hashmap WHERE isused = 0 ";
         $row = $db->getRow($query);
         if($row) {

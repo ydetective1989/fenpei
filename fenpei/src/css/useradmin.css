@@ -1,0 +1,8 @@
+.wrapper {
+    margin: 30px 15px;
+}
+.wrapper p{
+    font-size: 20px;
+    color: red;
+    font-weight: 600;
+}

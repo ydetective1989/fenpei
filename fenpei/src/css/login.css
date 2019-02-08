@@ -1,0 +1,7 @@
+.wrapper {
+    box-sizing: border-box;
+    margin: 40px 15px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}

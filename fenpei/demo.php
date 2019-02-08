@@ -37,5 +37,7 @@
     </div>
 </body>
 </html>
-
-
+<?php
+$name = 'qiuwei';
+echo md5('qw198543')
+?>
